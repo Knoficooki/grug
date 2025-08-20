@@ -297,6 +297,7 @@ static struct json_node json_parse_object(size_t *i) {
 	}
 
 	json_error(JSON_ERROR_EXPECTED_OBJECT_CLOSE);
+	assert(false);
 }
 
 static struct json_node json_parse_array(size_t *i) {
@@ -363,6 +364,7 @@ static struct json_node json_parse_array(size_t *i) {
 	}
 
 	json_error(JSON_ERROR_EXPECTED_ARRAY_CLOSE);
+	assert(false);
 }
 
 static struct json_node json_parse_string(size_t *i) {

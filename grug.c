@@ -3,7 +3,9 @@
 
 //// GRUG DOCUMENTATION
 //
-// See the bottom of this file for the MIT license
+// See the bottom of this file for the MIT license.
+//
+// grug aims to be the perfect modding language. Use it by dropping `grug.c` and `grug.h` into your game.
 //
 // See my YouTube video explaining and showcasing grug: https://youtu.be/4oUToVXR2Vo
 //
@@ -35,9 +37,8 @@
 // 10. DUMPING AST
 // 11. APPLYING AST
 // 12. TYPE PROPAGATION
-// 13. COMPILING
-// 14. LINKING
-// 15. HOT RELOADING
+// 13. GRUG BACKEND LINUX
+// 14. HOT RELOADING
 //
 // ## Programs showcasing grug
 //
@@ -9686,4 +9687,3 @@ void grug_toggle_on_fns_mode(void) {
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-

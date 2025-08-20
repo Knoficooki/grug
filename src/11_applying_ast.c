@@ -740,6 +740,7 @@ static enum global_statement_type get_global_statement_type_from_str(const char 
 		return GLOBAL_COMMENT;
 	}
 	grug_error("get_global_statement_type_from_str() was passed the string \"%s\", which isn't a global_statement_type", str);
+	assert(false);
 }
 
 static void apply_root(struct json_node node) {

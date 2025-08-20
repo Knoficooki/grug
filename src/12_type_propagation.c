@@ -3,19 +3,11 @@
 //// TYPE PROPAGATION
 
 #define MAX_VARIABLES_PER_FUNCTION 420420
-#define MAX_ENTITY_DEPENDENCY_NAME_LENGTH 420
-#define MAX_ENTITY_DEPENDENCIES 420420
 #define MAX_DATA_STRINGS 420420
 #define MAX_FILE_ENTITY_TYPE_LENGTH 420
 
 #define GLOBAL_VARIABLES_POINTER_SIZE sizeof(void *)
 
-struct variable {
-	const char *name;
-	enum type type;
-	const char *type_name;
-	size_t offset;
-};
 static struct variable variables[MAX_VARIABLES_PER_FUNCTION];
 static size_t variables_size;
 static u32 buckets_variables[MAX_VARIABLES_PER_FUNCTION];
@@ -53,6 +45,16 @@ static u32 chains_data_strings[MAX_DATA_STRINGS];
 
 static bool *parsed_fn_calls_helper_fn_ptr;
 static bool *parsed_fn_contains_while_loop_ptr;
+
+static size_t type_sizes[] = {
+	[type_bool] = sizeof(bool),
+	[type_i32] = sizeof(i32),
+	[type_f32] = sizeof(float),
+	[type_string] = sizeof(const char *),
+	[type_id] = sizeof(u64),
+	[type_resource] = sizeof(const char *),
+	[type_entity] = sizeof(const char *),
+};
 
 static void reset_filling(void) {
 	global_variables_size = 0;

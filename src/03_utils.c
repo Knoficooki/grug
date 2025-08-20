@@ -1,14 +1,7 @@
 #include "02_includes_and_defines.c"
+#include "grug_backend.h" // TODO: Let the CI trim this when generating grug.c!
 
 //// UTILS
-
-typedef uint8_t u8;
-typedef uint16_t u16;
-typedef int32_t i32;
-typedef uint32_t u32;
-typedef int64_t i64;
-typedef uint64_t u64;
-typedef float f32;
 
 USED_BY_PROGRAMS struct grug_error grug_error;
 USED_BY_PROGRAMS bool grug_loading_error_in_grug_file;

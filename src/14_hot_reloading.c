@@ -1,4 +1,4 @@
-#include "14_linking.c"
+#include "12_type_propagation.c"
 
 //// HOT RELOADING
 
@@ -748,7 +748,7 @@ static void reload_modified_mods(void) {
 	}
 }
 
-bool grug_init(grug_runtime_error_handler_t handler, const char *mod_api_json_path, const char *mods_dir_path, const char *dll_dir_path, uint64_t on_fn_time_limit_ms_) {
+bool grug_init(grug_runtime_error_handler_t handler, const char *mod_api_json_path, const char *mods_dir_path, const char *dll_dir_path, uint64_t on_fn_time_limit_ms_, grug_backend backend) {
 	if (setjmp(error_jmp_buffer)) {
 		return true;
 	}
